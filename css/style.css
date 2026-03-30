@@ -169,7 +169,7 @@ body {
     background-size: 4vw 2vw;
 }
 
-@media (max-width: 390px) {
+@media (max-width: 430px) {
     .burger {
         display: block;
     }
@@ -285,7 +285,7 @@ body {
     margin-bottom: 150px;
 }
 
-@media (max-width: 390px) {
+@media (max-width: 430px) {
     .about {
     display: flex;
     flex-direction: column;
@@ -299,7 +299,7 @@ body {
     order: 1;
 }
 
-@media (max-width: 390px) {
+@media (max-width: 430px) {
     .about-left {
     width: 100%;
     order: 2;
@@ -311,7 +311,7 @@ body {
     order: 2;
 }
 
-@media (max-width: 390px) {
+@media (max-width: 430px) {
     .about-right {
     width: 100%;
     order: 1;
@@ -325,7 +325,7 @@ body {
     width: 90%;
 }
 
-@media (max-width: 390px) {
+@media (max-width: 430px) {
     .about-right > img {
     position: relative;
     top: 0;
@@ -360,7 +360,7 @@ body {
     font-size: 1rem;
 }
 
-@media (max-width: 390px) {
+@media (max-width: 430px) {
     .desc, .list {
     font-family: "Inter";
     font-weight: 200;
@@ -416,7 +416,7 @@ body {
     grid-row-gap: 30px;
 }
 
-@media (max-width: 390px) {
+@media (max-width: 430px) {
     .card-container {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
@@ -465,7 +465,7 @@ body {
     padding: 200px 100px 100px;
 }
 
-@media (max-width: 390px) {
+@media (max-width: 430px) {
     #percs {
         display: flex;
         flex-direction: column;
@@ -480,7 +480,7 @@ body {
     gap: 100px;
 }
 
-@media (max-width: 390px) {
+@media (max-width: 430px) {
     .up-row, .bottom-row {
     display: flex;
     flex-direction: column;
@@ -518,7 +518,7 @@ body {
     display: flex;
 }
 
-@media (max-width: 390px) {
+@media (max-width: 430px) {
     #contacts {
         display: flex;
         flex-direction: column;
@@ -675,7 +675,7 @@ body {
     background-size: 48px 96px;
 }
 
-@media (max-width: 390px) {
+@media (max-width: 430px) {
     .circles2 {
         display: none;
     }
@@ -736,7 +736,7 @@ footer {
     cursor: pointer;
 }
 
-@media (max-width: 390px) {
+@media (max-width: 430px) {
     .content {
         padding: 20px;
     }
