@@ -12,27 +12,27 @@
 
 @font-face {
     font-family: "Inter";
-    src: url("fonts/Inter.ttf");
+    src: url("../fonts/Inter.ttf");
 }
 
 @font-face {
     font-family: "Peace";
-    src: url("fonts/PeaceSans.otf");
+    src: url("../fonts/PeaceSans.otf");
 }
 
 @font-face {
     font-family: "TTDaysSansRegular";
-    src: url("fonts/TTDaysSans-Regular.ttf");
+    src: url("../fonts/TTDaysSans-Regular.ttf");
 }
 
 @font-face {
     font-family: "TTDaysSansBold";
-    src: url("fonts/TTDaysSans-Bold.ttf");
+    src: url("../fonts/TTDaysSans-Bold.ttf");
 }
 
 @font-face {
     font-family: "TTDaysSansBlack";
-    src: url("fonts/TTDaysSans-Black.ttf");
+    src: url("../fonts/TTDaysSans-Black.ttf");
 }
 
 * {
@@ -221,7 +221,7 @@ body {
     left: 0;
     z-index: -1;
     width: 100%;
-    mask-image: url("images/mask1.svg");
+    mask-image: url("../images/mask1.svg");
     mask-size: 200%;
     mask-position: 48% 90%;
     mask-repeat: no-repeat;
@@ -377,7 +377,7 @@ body {
     line-height: 3.5rem;
     padding-left: 6rem;
     padding-bottom: 15px;
-    background: url("images/marker.svg") no-repeat;
+    background: url("../images/marker.svg") no-repeat;
     background-size: 3.5rem 3.5rem;
 }
 
