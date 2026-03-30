@@ -1,0 +1,184 @@
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="/images/favicon.svg" type="image/x-icon">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="/js/script.js" defer></script>
+    <script src="/js/jquery-1.9.0.min.js"></script>
+    <script src="/js/jquery.maskedinput.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+    <script src="/js/db.js" defer></script>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="#hero"><img src="images/logo.svg" alt="Logo" class="logo-image"></a>
+        <div class="full-menu">
+            <a href="#hero" class="nav-btns">О нас</a>
+            <a href="#catalog" class="nav-btns">Каталог</a>
+            <a href="#percs" class="nav-btns">Спец. предложения</a>
+            <a href="#contacts" class="nav-btns">Контакты</a>
+            <div class="socials">
+                <a href="https://vk.com/arino4ka16" target="_blank" class="vk-btn"><img src="images/vk-logo.svg" alt="VK Logo"></a>
+                <a href="https://t.me/arrrino4ka16" target="_blank" class="telegram-btn"><img src="images/telegram-logo.svg" alt="Telegram Logo"></a>
+            </div>
+        </div>
+        <input type="checkbox" id="burger-checkbox" class="burger-checkbox">
+        <label class="burger" for="burger-checkbox"></label>
+        <ul class="menu-list">
+            <li><a href="#hero" class="nav-btns">О нас</a></li>
+            <li><a href="#catalog" class="nav-btns">Каталог</a></li>
+            <li><a href="#percs" class="nav-btns">Спец. предложения</a></li>
+            <li><a href="#contacts" class="nav-btns">Контакты</a></li>
+        </ul>
+    </nav>
+    <div class="circles"></div>
+    <div class="content">
+        <div id="hero">
+            <img src="/images/hero.jpeg" alt="" class="hero-img">
+            <div class="hero-content">
+                <h1>РОЗОВЫЙ ЧИЗКЕЙК</h1>
+                <p>Доставка кондитерской продукции</p>
+                <a href="#contacts" class="order-btn">
+                    Заказать
+                    <img src="/images/order-arrow.svg" alt="">
+                </a>
+            </div>
+        </div>
+        <div class="about">
+            <div class="about-left">
+                <h2 class="name">Марина Тимофеева</h2>
+                <p class="desc">
+                Я занимаюсь профессиональной выпечкой тортов уже более 15 лет. <br> На своем опыте знаю: в момент процесса выпечки всегда не вовремя заканчивается нужный краситель, ломается фигурка, рассыпается смесь. 
+                </p>
+                <ul class="list">
+                    <li data-aos="fade-right">Бесплатная доставка при заказе <span class="decor">от 5000₽</span></li>
+                    <li data-aos="fade-right"><span class="decor">24 часа</span> доставка курьерской службой по СПб и Лен. области</li>
+                    <li data-aos="fade-right">Принимаем заказы <span class="decor">круглосуточно</span></li>
+                </ul>
+            </div>
+            <div class="about-right">
+                <img data-aos="fade-up" data-aos-duration="700" src="/images/woman.png" alt="">
+            </div>
+        </div>
+        <div id="catalog">
+            <h1 class="catalog-h1">Каталог</h1>
+            <img src="/images/mask3.svg" alt="" class="catalog-blob">
+            <div class="card-container">
+                                
+            </div>
+        </div>
+        <div id="percs">
+            <div class="up-row">
+                <div class="percs-card">
+                    <img src="/images/perc-img1.svg" alt="">
+                    <h2>РАБОТАЕМ КРУГЛОСУТОЧНО</h2>
+                    <p>Самовывоз 24 часа</p>
+                </div>
+                <div class="percs-card">
+                    <img src="/images/perc-img2.svg" alt="">
+                    <h2>ДОСТАВЛЯЕМ НА ДОМ</h2>
+                    <p>Курьерская доставка<br>на дом по СПб и Лен. области</p>
+                </div>
+            </div>
+            <div class="bottom-row">
+                <div class="percs-card">
+                    <img src="/images/perc-img3.svg" alt="">
+                    <h2>ВЫДАЕМ НАПРОКАТ</h2>
+                    <p>Прокат кондитерских форм и приспособлений</p>
+                </div>
+                <div class="percs-card">
+                    <img src="/images/perc-img4.svg" alt="">
+                    <h2>ФОТОПЕЧАТЬ</h2>
+                    <p>Печатаем на кондитерских изделиях</p>
+                </div>
+                <div class="percs-card">
+                    <img src="/images/perc-img5.svg" alt="">
+                    <h2>КОНСУЛЬТАЦИЯ</h2>
+                    <p>Индивидуальные консультации по подбору оптимального решения</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="contacts">
+            <div class="feedback">
+                <div class="feedback-headers">
+                    <h1 class="feedback-header">Обсудим вместе<br>ваш идеальный торт?</h1>
+                    <h1 class="order-confirm">Заказ получен!</h1>
+                </div>
+                <div class="feedback-form">
+                    <div class="form-input">
+                        <input type="text" class="client-name" required>
+                        <label for="">Имя</label>
+                    </div>
+                    <script>
+                        jQuery(function($){
+                            $.mask.definitions['h'] = "[0|1|3|4|5|6|7|9]";
+                            $(".client-phone").mask("+7 (h99) 999-99-99");
+                        });
+                    </script>
+                    <div class="form-input">
+                        <input type="tel" class="client-phone" required>
+                        <label for="">Телефон</label>
+                    </div>
+                    <div class="form-input">
+                        <input type="text" class="client-msg" required>   
+                        <label for="">Комментарий</label>
+                    </div>
+                </div>
+                <a class="order-btn2">
+                    Заказать
+                    <img src="/images/order-arrow2.svg" alt="">
+                </a>
+                <p class="invalid-form">Заполните форму!</p>
+            </div>
+            <div class="map">
+                <div class="circles2"></div>
+                <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Ae51c9cf663348d5de5a646b1e3416cf1383c625861940c0d3f8608bfda0c871a&amp;source=constructor" width="600" height="450" frameborder="0"></iframe>
+            </div>
+        </div>
+    <div class="circles3-container">
+        <div class="circles3"></div>
+    </div>
+    <footer>
+        <div class="footer-left">
+            <div class="logo-slogan">
+                <a href="#hero"><img src="images/logo.svg" alt="Logo" class="logo-image"></a>
+                <p>Где кондитеру найти товары поздним вечером, ночью или рано утром?<br><span style="color: #96181B">У нас!</span></p>
+            </div>
+            <div class="address">
+                <p><span style="font-weight: 600;">Адрес</span><br>Санкт-Петербург, ул. Большая Морская, д. 18</p>
+            </div>
+            <div class="contacts-footer">
+                <p><span style="font-weight: 600;">Контакты</span><br>info@pinkcake.ru<br>+78121112233</p>
+            </div>
+        </div>
+        <div class="footer-right">
+            <div class="menu">
+                <a href="#hero" class="about-us">О нас</a>
+                <a href="#catalog" class="catalog-menu">Каталог</d>
+                <a href="#percs" class="sales">Спец. предложения</a>
+            </div>
+            <div class="socials">
+                <a href="https://vk.com/arino4ka16" target="_blank" class="vk-btn"><img src="images/vk-logo.svg" alt="VK Logo"></a>
+                <a href="https://t.me/arrrino4ka16" target="_blank" class="telegram-btn"><img src="images/telegram-logo.svg" alt="Telegram Logo"></a>
+            </div>
+        </div>
+    </footer>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+    (function(){
+        emailjs.init({
+            publicKey: "S3CrPCTaqXlATF7T7",
+        });
+    })();
+    </script>
+</body>
+</html>

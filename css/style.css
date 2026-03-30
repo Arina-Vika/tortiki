@@ -1,0 +1,862 @@
+@property --main-color {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #FEECDE;
+}
+
+@property --secondary-color {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #96181B;
+}
+
+@font-face {
+    font-family: "Inter";
+    src: url("/fonts/Inter.ttf");
+}
+
+@font-face {
+    font-family: "Peace";
+    src: url("/fonts/PeaceSans.otf");
+}
+
+@font-face {
+    font-family: "TTDaysSansRegular";
+    src: url("/fonts/TTDaysSans-Regular.ttf");
+}
+
+@font-face {
+    font-family: "TTDaysSansBold";
+    src: url("/fonts/TTDaysSans-Bold.ttf");
+}
+
+@font-face {
+    font-family: "TTDaysSansBlack";
+    src: url("/fonts/TTDaysSans-Black.ttf");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--main-color);
+    overflow-x: hidden;
+}
+
+.logo-image {
+    width: 60%;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    height: 150px;
+    padding: 2vh 10vw;
+    background-color: var(--main-color);
+    overflow: hidden;
+}
+
+.full-menu {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    background-color: var(--main-color);
+}
+
+.burger-checkbox {
+  position: absolute;
+  visibility: hidden;
+}
+.burger {
+  cursor: pointer;
+  display: none;
+  position: relative;
+  border: none;
+  background: transparent;
+  width: 40px;
+  height: 26px;
+}
+.burger::before,
+.burger::after {
+  content: '';
+  left: 0;
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 4px;
+  border-radius: 10px;
+  background: var(--secondary-color);
+}
+.burger::before {
+  top: 0;
+  box-shadow: 0 11px 0 var(--secondary-color);
+}
+
+.burger::after {
+  bottom: 0;
+}
+
+.mobile-menu {
+    display: none;
+}
+
+@keyframes showMenu {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.menu-list {
+    top: 100px;
+    right: 0;
+    position: absolute;
+    display: none;
+    gap: 12px;
+    padding: 20px 0;
+    margin: 0;
+    background: var(--main-color);
+    list-style-type: none;
+    transition: .3s;
+    width: 200px;
+    z-index: 10;
+}
+
+.menu-show {
+    display: grid;
+}
+
+.menu-list > li {
+    display: block;
+    padding: 8px;
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.navbar a {
+    width: 10%;
+    font-family: "TTDaysSansRegular";
+    text-decoration: none;
+    color: black;
+}
+
+.socials {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.circles {
+    position: absolute;
+    height: 100px;
+    width: 100vw;
+    top: 150px;
+    left: 0;
+    background-image: radial-gradient(circle at 2vw 0px, var(--main-color) 2vw, rgba(255,255,255,0) 0px);
+    background-repeat: repeat-x;
+    background-size: 4vw 2vw;
+}
+
+@media (max-width: 390px) {
+    .burger {
+        display: block;
+    }
+
+    .navbar {
+        height: 100px;
+        justify-content: space-between;
+    }
+
+    .navbar > a {
+        width: 50%;
+    }
+
+    .circles {
+        top: 100px;
+    }
+
+    .socials {
+        display: none;
+    }
+
+    .full-menu {
+        display: none;
+    }
+
+    .logo-image {
+        width: 50%;
+    }
+
+    .mobile-menu {
+        display: block;
+        width: 50%;
+    }
+}
+
+.socials img {
+    width: 40px;
+    cursor: pointer;
+}
+
+.content {
+    padding: 10vw;
+    overflow-x: hidden;
+}
+
+.hero-img {
+    position: absolute;
+    top: 100px;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    mask-image: url("/images/mask1.svg");
+    mask-size: 200%;
+    mask-position: 48% 90%;
+    mask-repeat: no-repeat;
+}
+
+#hero {
+    height: 80vh;
+}
+
+
+.hero-content > h1 {
+    font-family: "Peace";
+    font-weight: 400;
+    font-size: 3.5rem;
+    color: var(--secondary-color);
+}
+
+.hero-content > p {
+    margin-bottom: 25px;
+    font-family: "Inter";
+    font-weight: 300;
+    font-size: 1.5rem;
+}
+
+.order-btn {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 8px 12px;
+    width: 170px;
+    border: 2px solid transparent;
+    border-radius: 30px;
+    cursor: pointer;
+    font-family: "Peace";
+    font-size: 1rem;
+    color: var(--main-color);
+    background-color: var(--secondary-color);
+    text-decoration: none;
+    transform: scale(1);
+    transition: transform .2s ease;
+}
+
+.order-btn:active {
+    
+    background-color: var(--main-color);
+    color: var(--secondary-color);
+    border: 2px solid var(--secondary-color);
+}
+
+.order-btn:hover {
+    transform: scale(1.1);
+}
+
+.order-btn > img {
+    width: 30px;
+}
+
+.about {
+    display: flex;
+    margin-top: 50px;
+    margin-bottom: 150px;
+}
+
+@media (max-width: 390px) {
+    .about {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    margin-bottom: 150px;
+}
+}
+
+.about-left {
+    width: 50%;
+    order: 1;
+}
+
+@media (max-width: 390px) {
+    .about-left {
+    width: 100%;
+    order: 2;
+}
+}
+
+.about-right {
+    width: 50%;
+    order: 2;
+}
+
+@media (max-width: 390px) {
+    .about-right {
+    width: 100%;
+    order: 1;
+}
+}
+
+.about-right > img {
+    position: relative;
+    top: -50px;
+    left: 10%;
+    width: 90%;
+}
+
+@media (max-width: 390px) {
+    .about-right > img {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 90vw;
+}
+}
+
+.name {
+    position: relative;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-family: "TTDaysSansBlack";
+    font-weight: 400;
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+}
+
+.name::after{ 
+  position: absolute;
+  left: 0;
+  top: 100%;
+  content: '';
+  background: #333333;
+  width: 300px;
+  height: 2px;
+}
+
+.desc, .list {
+    font-family: "Inter";
+    font-weight: 200;
+    font-size: 1rem;
+}
+
+@media (max-width: 390px) {
+    .desc, .list {
+    font-family: "Inter";
+    font-weight: 200;
+    font-size: 2rem;
+}
+}
+
+.list {
+    margin-top: 100px;
+    list-style-type: none;
+}
+
+.list > li {
+    line-height: 3.5rem;
+    padding-left: 6rem;
+    padding-bottom: 15px;
+    background: url("/images/marker.svg") no-repeat;
+    background-size: 3.5rem 3.5rem;
+}
+
+.decor {
+    font-weight: 900;
+    color: var(--secondary-color);
+}
+
+#catalog {
+    position: relative;
+}
+
+.catalog-h1 {
+    position: relative;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-family: "TTDaysSansBlack";
+    font-weight: 400;
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+}
+
+.catalog-blob {
+    position: absolute;
+    left: -100%;
+    top: -10%;
+    width: 280%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 30px;
+}
+
+@media (max-width: 390px) {
+    .card-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 30px;
+}
+}
+
+.card {
+    height: 450px;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    border: 2px var(--secondary-color) solid;
+    border-radius: 15px;
+    background-color: var(--main-color);
+}
+
+.card > img {
+    height: 300px;
+    width: 100%;
+    margin-bottom: 20px;
+    border: 2px var(--secondary-color) solid;
+    border-radius: 15px;
+    object-fit: cover;
+}
+
+.cake-name {
+    font-family: "TTDaysSansBold";
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.cake-price {
+    font-family: "Inter";
+    font-weight: 300;
+    font-size: 1rem;
+}
+
+#percs {
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    align-items: center;
+    padding: 200px 100px 100px;
+}
+
+@media (max-width: 390px) {
+    #percs {
+        display: flex;
+        flex-direction: column;
+        gap: 100px;
+        align-items: center;
+        padding: 200px 100px 100px;
+    }
+}
+
+.up-row, .bottom-row {
+    display: flex;
+    gap: 100px;
+}
+
+@media (max-width: 390px) {
+    .up-row, .bottom-row {
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+}
+}
+
+.percs-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.percs-card > img {
+    width: 50%;
+    height: 15vh;
+    margin-bottom: 30px;
+}
+
+.percs-card > h2 {
+    font-family: "Inter";
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+}
+
+.percs-card > p {
+    text-align: center;
+    font-family: "Inter";
+    font-weight: 200;
+}
+
+#contacts {
+    display: flex;
+}
+
+@media (max-width: 390px) {
+    #contacts {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.feedback {
+    padding: 100px 1vw 100px 10vw;
+    background-color: var(--secondary-color);
+    width: 40%;
+}
+
+.feedback-headers {
+    position: relative;
+    margin-bottom: 50px;
+    font-family: "TTDaysSansBlack";
+    font-weight: 400;
+    color: var(--main-color)
+}
+
+.feedback-header {
+    opacity: 1;
+    transition: opacity .3s ease;
+}
+
+.feedback-header.hidden {
+    opacity: 0;
+}
+
+.order-confirm {
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    transition: opacity .3s ease;
+}
+
+.order-confirm.show {
+    opacity: 1;
+}
+
+.feedback-form {
+    margin-bottom: 40px;
+    font-family: "Inter";
+    font-weight: 100;
+    display: flex;
+    flex-direction: column;
+    color: var(--main-color);
+    gap: 20px;
+}
+
+.form-input input {
+    padding-left: 2px;
+    border: none;
+    border-bottom: 1.5px solid var(--main-color);
+    color: var(--main-color);
+    background: none;
+    width: 300px;
+}
+
+.form-input {
+    position: relative;
+}
+
+.form-input input:focus + label {
+    display: none;
+}
+
+.form-input input:valid + label {
+    display: none;
+}
+
+.form-input input:focus {
+    outline: none;
+}
+
+.form-input > label {
+    pointer-events: none;
+    position: absolute;
+    left: 2px;
+    top: -5px;
+    z-index: 1;
+}
+
+.order-btn2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 8px 15px;
+    width: 150px;
+    border: 2px solid transparent;
+    border-radius: 30px;
+    cursor: pointer;
+    font-family: "Peace";
+    font-size: 1rem;
+    color: var(--secondary-color);
+    background-color: var(--main-color);
+    transform: scale(1);
+    transition: transform .2s ease;
+}
+
+.order-btn2:active {
+    border: solid 2px var(--main-color);
+    color: var(--main-color);
+    background-color: var(--secondary-color);
+}
+
+.order-btn2:hover {
+    transform: scale(1.1);
+}
+
+.order-btn2 > img {
+    width: 25px;
+}
+
+.invalid-form {
+    opacity: 0;
+    margin-top: 10px;
+    font-family: "Inter";
+    font-weight: 200;
+    color: var(--main-color);
+    transition: opacity 0.3s ease;
+}
+
+.invalid-form.active {
+    opacity: 1;;
+}
+
+.circles3-container {
+    position: relative;
+}
+
+.circles3 {
+    position: absolute;
+    top: -2vw;
+    height: 2vw;
+    width: 100vw;
+    background-image: radial-gradient(circle at 2vw bottom, var(--main-color) 2vw, rgba(255,255,255,0) 0px);
+    background-repeat: repeat-x;
+    background-size: 4vw 2vw;
+}
+
+.map {
+    position: relative;
+    width: 60%;
+}
+
+.circles2 {
+    position: absolute;
+    width: 48px;
+    height: 100%;
+    background-image: radial-gradient(circle at left 48px, var(--secondary-color) 48px, rgba(255,255,255,0) 0px);
+    background-repeat: repeat-y;
+    background-size: 48px 96px;
+}
+
+@media (max-width: 390px) {
+    .circles2 {
+        display: none;
+    }
+}
+
+.map > iframe {
+    height: 100%;
+    width: 100%;
+}
+
+footer {
+    padding: 0 10vw;
+    display: flex;
+    justify-content: space-evenly;
+    font-weight: 300;
+    height: 100px;
+    gap: 15%;
+    background-color: var(--main-color);
+    font-family: "Inter";
+    font-size: 0.8rem;
+}
+
+.footer-left {
+    width: 70%;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.footer-right {
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-slogan {
+    font-style: italic;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo-slogan > a > img {
+    width: 60px;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-family: "TTDaysSansBold";
+}
+
+.menu > a {
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
+
+@media (max-width: 390px) {
+    .content {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.8rem !important;
+    }
+
+    h2 {
+        font-size: 1.2rem !important;
+    }
+
+    p {
+        font-size: 0.9rem !important;
+    }
+
+    .hero-img {
+        position: absolute;
+        width: 100%;
+        top: 100px;
+    }
+
+    #hero {
+        height: auto;
+        padding-top: 120px;
+    }
+
+    .hero-content {
+        margin-top: 100px;
+        text-align: center;
+    }
+
+    .hero-content > h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content > p {
+        font-size: 1rem;
+    }
+
+    .order-btn {
+        margin: 0 auto;
+    }
+
+    .name::after {
+        width: 100%;
+    }
+
+    .list {
+        margin-top: 30px;
+    }
+
+    .list > li {
+        font-size: 0.9rem;
+        line-height: 1.4rem;
+        padding-left: 40px;
+        background-size: 25px;
+    }
+
+    .about {
+        margin-bottom: 50px;
+    }
+
+    .catalog-blob {
+        display: none;
+    }
+
+    .card {
+        height: auto;
+    }
+
+    .card > img {
+        height: 200px;
+    }
+
+    #percs {
+        padding: 50px 20px;
+        gap: 50px;
+    }
+
+    .up-row, .bottom-row {
+        gap: 40px;
+    }
+
+    .percs-card > img {
+        width: 80px;
+        height: auto;
+    }
+
+    .feedback {
+        width: 100%;
+        padding: 40px 20px;
+    }
+
+    .form-input input {
+        width: 100%;
+    }
+
+    .map {
+        width: 100%;
+        height: 300px;
+    }
+
+    footer {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .footer-left {
+        flex-direction: column;
+        width: 100%;
+        align-items: flex-start;
+    }
+
+    .footer-right {
+        width: 100%;
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+    }
+}
