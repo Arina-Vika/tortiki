@@ -10,10 +10,6 @@ const burger = document.querySelector('.burger');
 
 const menuList = document.querySelector('.menu-list');
 
-function showMenu() {
-    
-}
-
 burger.addEventListener('click', () => {
     if (menuList.classList.contains('menu-show')) {
         menuList.classList.remove('menu-show');

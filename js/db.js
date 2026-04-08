@@ -23,7 +23,7 @@ async function loadCakes() {
             card.innerHTML = `
             <img src="${cake.image}" alt="${cake.name}">
             <h2 class="cake-name">${cake.name}</h2>
-            <p class="cake-price">${cake.price}₽/кг.</p>
+            <p class="cake-price">${cake.price.toLocaleString()}₽/кг.</p>
         `;
         } else {
             card.innerHTML = `
