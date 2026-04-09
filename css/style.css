@@ -52,6 +52,7 @@ body {
 
 .logo-image {
     min-width: 80px;
+    max-width: 130px;
     width: 8vw;
 }
 
